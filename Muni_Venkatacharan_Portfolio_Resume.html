@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muni Venkatacharan G</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --p1: #0d0118;
+  --p2: #1a0533;
+  --p3: #2e0f52;
+  --p4: #5b21b6;
+  --p5: #8b5cf6;
+  --p6: #c4b5fd;
+  --gold: #f4c553;
+  --gold2: #fde68a;
+  --coral: #ff6b6b;
+  --teal: #2dd4bf;
+  --white: #ffffff;
+  --muted: #a89bc0;
+  --body: #ddd6f3;
+}
+
+body {
+  background: #0a0015;
+  font-family: 'Outfit', sans-serif;
+  color: var(--body);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--p1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── DECORATIVE ── */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.dc1 { width: 500px; height: 500px; top: -200px; right: -150px; background: radial-gradient(circle, rgba(91,33,182,0.3) 0%, transparent 65%); }
+.dc2 { width: 350px; height: 350px; bottom: 200px; left: -100px; background: radial-gradient(circle, rgba(45,212,191,0.1) 0%, transparent 65%); }
+.dc3 { width: 200px; height: 200px; top: 60%; right: 20px; background: radial-gradient(circle, rgba(244,197,83,0.08) 0%, transparent 65%); }
+
+.noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ── HERO HEADER ── */
+.hero {
+  padding: 44px 48px 0;
+  position: relative;
+}
+
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hero-left { flex: 1; }
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1.5px;
+  background: var(--teal);
+  display: inline-block;
+}
+
+.name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: -1.5px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.name .highlight { color: var(--p5); }
+.name .g { color: var(--gold); }
+
+.role-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.role-pill {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.pill-purple { background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.5); color: var(--p6); }
+.pill-gold { background: rgba(244,197,83,0.15); border: 1px solid rgba(244,197,83,0.4); color: var(--gold); }
+.pill-teal { background: rgba(45,212,191,0.12); border: 1px solid rgba(45,212,191,0.35); color: var(--teal); }
+.pill-coral { background: rgba(255,107,107,0.12); border: 1px solid rgba(255,107,107,0.35); color: var(--coral); }
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 380px;
+  border-left: 2px solid var(--p5);
+  padding-left: 12px;
+}
+
+.hero-right {
+  text-align: right;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  margin-bottom: 7px;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(139,92,246,0.2);
+  border: 1px solid rgba(139,92,246,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+
+/* ── DIVIDER ── */
+.hero-divider {
+  margin: 20px 48px 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,0.5) 20%, rgba(244,197,83,0.3) 60%, transparent);
+}
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: flex;
+  padding: 16px 48px;
+  gap: 0;
+  border-bottom: 1px solid rgba(139,92,246,0.15);
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.stat::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 20%; bottom: 20%;
+  width: 1px;
+  background: rgba(139,92,246,0.2);
+}
+
+.stat:last-child::after { display: none; }
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.stat-num span { color: var(--gold); }
+
+.stat-label {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── BODY ── */
+.body {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+}
+
+.main { padding: 24px 28px 28px 48px; border-right: 1px solid rgba(139,92,246,0.12); }
+.side { padding: 24px 28px; background: rgba(30,5,60,0.4); }
+
+/* ── SECTION HEADING ── */
+.sh {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 9.5px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--p5);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sh::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(139,92,246,0.5), transparent);
+}
+
+/* ── ABOUT ── */
+.about-text {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--body);
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.about-text strong { color: var(--white); font-weight: 500; }
+.about-text .accent { color: var(--gold); font-weight: 500; }
+.about-text .teal { color: var(--teal); font-weight: 500; }
+
+/* ── EXPERIENCE ── */
+.job { margin-bottom: 18px; }
+
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+  gap: 10px;
+}
+
+.job-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.job-badge {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-current { background: rgba(45,212,191,0.2); border: 1px solid rgba(45,212,191,0.4); color: var(--teal); }
+.badge-film { background: rgba(244,197,83,0.2); border: 1px solid rgba(244,197,83,0.4); color: var(--gold); }
+
+.job-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.job-co { font-size: 11.5px; font-weight: 600; color: var(--gold); }
+.job-dot { color: rgba(139,92,246,0.4); font-size: 8px; }
+.job-loc { font-size: 11px; color: var(--muted); }
+.job-date { font-size: 11px; color: var(--muted); font-style: italic; }
+
+.bullets { list-style: none; }
+
+.bullets li {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--body);
+  font-weight: 300;
+  margin-bottom: 4px;
+  padding-left: 14px;
+  position: relative;
+}
+
+.bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--p5);
+  font-size: 9px;
+  top: 3px;
+}
+
+.bullets li strong { color: var(--white); font-weight: 500; }
+.bullets li .teal { color: var(--teal); font-weight: 500; }
+.bullets li .gold { color: var(--gold); }
+
+.job-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(139,92,246,0.2), transparent);
+  margin: 16px 0;
+}
+
+/* ── FILM CARD ── */
+.film-card {
+  background: linear-gradient(135deg, rgba(46,15,82,0.8), rgba(13,1,24,0.9));
+  border: 1px solid rgba(244,197,83,0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.film-card::before {
+  content: '🎬';
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  font-size: 18px;
+  opacity: 0.25;
+}
+
+.film-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+
+.film-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.film-roles {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.film-role {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(244,197,83,0.12);
+  border: 1px solid rgba(244,197,83,0.3);
+  color: var(--gold2);
+}
+
+/* ── SIDE ── */
+.side-block { margin-bottom: 20px; }
+
+/* Skills */
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.sk {
+  font-size: 9.5px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sk-a { background: rgba(139,92,246,0.18); border: 1px solid rgba(139,92,246,0.35); color: var(--p6); }
+.sk-b { background: rgba(45,212,191,0.12); border: 1px solid rgba(45,212,191,0.3); color: var(--teal); }
+.sk-c { background: rgba(244,197,83,0.12); border: 1px solid rgba(244,197,83,0.3); color: var(--gold); }
+.sk-d { background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.25); color: var(--coral); }
+
+/* Tools */
+.tool-row { margin-bottom: 9px; }
+.tl { font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.tv { font-size: 11.5px; color: var(--body); font-weight: 300; line-height: 1.5; }
+
+/* Certs */
+.cert { margin-bottom: 8px; padding-left: 10px; border-left: 2px solid var(--p4); }
+.cn { font-size: 11.5px; color: var(--white); font-weight: 500; line-height: 1.3; }
+.ci { font-size: 10.5px; color: var(--muted); font-weight: 300; }
+
+/* Edu */
+.edu { margin-bottom: 10px; }
+.ed { font-size: 12px; font-weight: 500; color: var(--white); line-height: 1.3; }
+.es { font-size: 10.5px; color: var(--muted); font-weight: 300; }
+.eg { font-size: 10px; color: var(--gold); margin-top: 2px; }
+
+/* Lang */
+.lang { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.ln { font-size: 12px; color: var(--white); font-weight: 400; }
+.ld { display: flex; gap: 3px; margin-top: 2px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; }
+.dot-on { background: var(--p5); }
+.dot-off { background: rgba(139,92,246,0.2); }
+.ll { font-size: 9.5px; color: var(--muted); letter-spacing: 0.5px; }
+
+/* Automation highlight box */
+.auto-box {
+  background: linear-gradient(135deg, rgba(45,212,191,0.07), rgba(139,92,246,0.1));
+  border: 1px solid rgba(45,212,191,0.2);
+  border-radius: 8px;
+  padding: 10px 13px;
+  margin-top: 10px;
+}
+
+.auto-box-title {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+
+.auto-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.at {
+  font-size: 9.5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(45,212,191,0.1);
+  border: 1px solid rgba(45,212,191,0.25);
+  color: var(--teal);
+  font-weight: 500;
+}
+
+@media print {
+  body { background: var(--p1); }
+  .page { margin: 0; width: 100%; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="deco-circle dc1"></div>
+  <div class="deco-circle dc2"></div>
+  <div class="deco-circle dc3"></div>
+  <div class="noise"></div>
+
+  <!-- ── TOP LINK BAR ──────────────────────────────────── -->
+  <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 14px 48px 0; position: relative; z-index: 10;">
+    <a href="https://www.linkedin.com/in/munivc" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 7px; background: rgba(10,102,194,0.3); border: 1.5px solid #3a7bd5; border-radius: 8px; padding: 8px 16px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#7bb8e8" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <span style="font-size: 12px; font-weight: 700; color: #7bb8e8; letter-spacing: 0.5px; font-family: 'Syne', sans-serif;">LinkedIn</span>
+    </a>
+    <a href="https://www.imdb.com/name/nm13630613/" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 7px; background: rgba(244,197,83,0.2); border: 1.5px solid rgba(244,197,83,0.8); border-radius: 8px; padding: 8px 16px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="#f5c542" xmlns="http://www.w3.org/2000/svg"><path d="M14.31 9.588v.005c-.077-.048-1.533-.956-1.533-.956s-.005 6.259-.005 6.314c.5.314 1.538.954 1.538.954V9.588zM24 5.5v13c0 1.934-1.566 3.5-3.5 3.5h-17C1.566 22 0 20.434 0 18.5v-13C0 3.566 1.566 2 3.5 2h17C22.434 2 24 3.566 24 5.5zM5.5 16h1.5V8H5.5v8zm6.191 0h1.34v-8h-1.34v3.02l-1.607-3.02H8.74v8h1.344v-3.77L11.69 16zm4.319 0h1.5V8H16.01v8zm2.99-6.5h-1.5v5h1.5c.827 0 1.5-.673 1.5-1.5v-2c0-.827-.673-1.5-1.5-1.5z"/></svg>
+      <span style="font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 0.5px; font-family: 'Syne', sans-serif;">IMDb</span>
+    </a>
+  </div>
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="eyebrow">Operations &nbsp; · &nbsp; Systems Builder &nbsp; · &nbsp; Vibe Coder &nbsp; · &nbsp; Filmmaker</div>
+        <div class="name">Muni <span class="highlight">Venkatacharan</span> <span class="g">G</span></div>
+        <div class="role-pills">
+          <span class="role-pill pill-purple">Operations Specialist</span>
+          <span class="role-pill pill-teal">Content &amp; Workflow Ops</span>
+          <span class="role-pill pill-gold">Project Management</span>
+          <span class="role-pill pill-coral">Automation Builder</span>
+          <span class="role-pill pill-purple">Vibe Coder</span>
+        </div>
+        <div class="tagline">"I don't just manage operations. I build the systems that make them run themselves."</div>
+      </div>
+      <div class="hero-right">
+        <div class="contact-row">
+          <span>Bengaluru, India</span>
+          <div class="contact-icon">📍</div>
+        </div>
+        <div class="contact-row">
+          <span>+91 9900097857</span>
+          <div class="contact-icon">📱</div>
+        </div>
+        <div class="contact-row">
+          <a href="mailto:mvcharan99@gmail.com" style="color: var(--muted); text-decoration: none;">mvcharan99@gmail.com</a>
+          <div class="contact-icon">✉</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-divider"></div>
+
+  <!-- ── STAT STRIP ────────────────────────────────────── -->
+  <div class="stat-strip">
+    <div class="stat">
+      <div class="stat-num">450<span>+</span></div>
+      <div class="stat-label">Projects Delivered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7<span>+</span></div>
+      <div class="stat-label">Years in Ops</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">20<span>+</span></div>
+      <div class="stat-label">Markets Covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Automation Tools Built</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Films</div>
+    </div>
+  </div>
+
+  <!-- ── BODY ──────────────────────────────────────────── -->
+  <div class="body">
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- ABOUT -->
+      <div style="margin-bottom: 22px;">
+        <div class="sh">Who I Am</div>
+        <p class="about-text">
+          I'm an operations professional who sits at the intersection of <strong>systems thinking, creative execution, and technical initiative</strong>. Currently working as Operations Specialist at <strong>Webidoo's Content Lab</strong>, a Milan-headquartered-headquartered global digital agency with offices across Italy, Spain, the US, and UAE, operating in markets worldwide. I manage the full lifecycle of content creation and localization projects across the <span class="teal">EMEA region</span>, coordinating distributed teams of designers, copywriters, and regional content leaders across multiple countries and time zones.
+        </p>
+        <p class="about-text">
+          This is a deliberately global role, and a deliberate step up. After building and running operations at a Pan India level for nearly 7 years, I made the move into international content operations. The scope, the markets, the languages, the stakeholders. It is a different league, and I hit the ground running from day one.
+        </p>
+        <p class="about-text">
+          What makes me different: I <strong>don't wait to be told there's a problem</strong>. I've independently built a suite of 8 automation tools through <strong>AI-assisted development (vibe coding)</strong> in Python, Apps Script, and n8n that are now adopted across the team. I identify gaps, design solutions, and ship them, without being asked.
+        </p>
+        <p class="about-text" style="margin-bottom: 0;">
+          Before all of this, I spent nearly 7 years running a <strong>B2B events company operating Pan India</strong>, managing 150+ events a year, a 25-vendor network, and teams of 15+ on the ground. And somewhere in between, I <span class="accent">produced and acted in a Kannada feature film</span> and went on to act in two more. All three are on IMDb, all featuring <strong>Priyanka Upendra</strong>. I'm someone who commits completely to everything they do.
+        </p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="sh">Experience</div>
+
+      <!-- Webidoo -->
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">Operations Specialist</div>
+          <span class="job-badge badge-current">Current Role</span>
+        </div>
+        <div class="job-sub">
+          <span class="job-co">Webidoo - Content Lab</span>
+          <span class="job-dot">◆</span>
+          <span class="job-loc">Milan-HQ'd Global Agency · Italy, Spain, US, UAE</span>
+          <span class="job-dot">◆</span>
+          <span class="job-loc">Bengaluru, India</span>
+          <span class="job-dot">◆</span>
+          <span class="job-date">Feb 2026 – Present</span>
+        </div>
+        <ul class="bullets">
+          <li>Manage <strong>end-to-end content creation and localization projects across multiple EMEA markets</strong>, covering the full project lifecycle from source copy extraction, brief preparation, and translation coordination through to design localization, regional validation with Content Delivery Managers, approval management, and final asset delivery. Every project touches multiple stakeholders, languages, and delivery formats simultaneously.</li>
+          <li>Drive <strong>project execution and workflow management via ClickUp</strong>, structuring tasks, assigning deliverables, setting and tracking timelines, and maintaining real-time progress visibility across distributed teams of copywriters, designers, and regional stakeholders. Ensure nothing falls through the cracks across complex multi-market content cycles.</li>
+          <li>Serve as the <strong>operational bridge between leadership and delivery teams</strong>, working closely with the Leadership Team, Content Delivery Managers, copywriters, and designers across regions to surface blockers early, resolve dependencies, and keep priorities, timelines, and communication fully aligned at all times. Often the single thread connecting multiple workstreams.</li>
+          <li>Manage <strong>digital asset workflows across Adobe Experience Manager (AEM) and Google Drive</strong>, including uploading, organizing, and maintaining structured project repositories. Responsible for enforcing file taxonomy and naming conventions across all assets to ensure consistency, AEM compliance, and discoverability across the team.</li>
+          <li>Prepare and maintain <strong>structured daily operational reports, project status updates, and consolidated bi-weekly and monthly reports</strong> shared with leadership to maintain full delivery visibility. Introduced structured daily reporting practices from day one, which became a standard practice adopted by the team.</li>
+          <li>Proactively <strong>identify workflow gaps, inefficiencies, and improvement opportunities</strong> by reviewing dashboards, delivery data, and team feedback. We take action to fix them rather than just flagging them. This approach led directly to building the automation suite below.</li>
+        </ul>
+
+        <div class="auto-box">
+          <div class="auto-box-title">⚡ Self-Initiated: Automation Suite: 8 Tools Built &amp; Deployed</div>
+          <p style="font-size: 11.5px; color: var(--body); font-weight: 300; margin-bottom: 12px; line-height: 1.6;">
+            Entirely self-initiated. Built through <strong style="color: var(--teal);">AI-assisted development (vibe coding)</strong> using Python, Google Apps Script, and n8n, without a formal engineering background. Each tool was designed to solve a real, recurring problem in the team's workflow. Presented at a bi-weekly managers review and <span style="color: var(--teal); font-weight: 500;">approved for full team adoption.</span>
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">Taxonomy Bulk Drive File Renamer</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">Enforces client taxonomy naming standards and validates every attribute before renaming. Turns a tedious manual renaming task into a 2-minute automated process, eliminating AEM upload errors caused by non-compliant filenames.</div>
+            </div>
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">Automated Drive File Renamer (Universal)</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">A general-purpose renamer built for every non-Amazon project in the agency. Handles full folder hierarchy, renames both files and folders, and applies AEM-standard naming logic. Converts what used to be a ~1 hour manual task into a 2-minute process with a 100% AEM upload success rate.</div>
+            </div>
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">Amazon File Name Audit Tool</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">Acts as a safety firewall for high-volume Amazon projects. Scans up to 5 levels of folder hierarchy to detect AEM-illegal characters (spaces, +, parentheses), proposes compliant names automatically, and gives the user full control. Nothing is renamed without approval. Prevents upload delays caused by non-compliant filenames across hundreds of assets.</div>
+            </div>
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">Project Setup Tool</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">A full project ecosystem automator that simultaneously builds the Drive folder structure and the brief spreadsheet in under 5 minutes. Handles both Channel Projects (automatically grouping into To Channel, Through Channel, and Internal categories) and Regular Projects. Replaces what previously took 3+ hours of manual setup.</div>
+            </div>
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">Brief Drive Folder Creator</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">Automates the creation of standardized brief folders for every new project kickoff. Eliminates 15-20 minutes of manual folder creation per project, ensures every brief automatically contains the mandatory sub-structure (Assets, Exports, Source Files), and lets users pick destination folders visually without needing folder IDs.</div>
+            </div>
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">Bulk Drive Folder Creator</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">Built for high-volume project setups. Creates 5 to 100+ main folders with custom hierarchy in 30 seconds, turning a 20-minute manual setup into an instant automated task, regardless of the depth or scale of the folder structure needed.</div>
+            </div>
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">IDML Localization Tool</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">Automates the insertion of translated content directly into InDesign (IDML) files. Upload an IDML file and a translation Excel, select the target language, and the tool generates a fully localized IDML file along with a QA report, significantly reducing manual localization effort and turnaround time for design teams.</div>
+            </div>
+            <div style="background: rgba(45,212,191,0.06); border: 1px solid rgba(45,212,191,0.15); border-radius: 6px; padding: 8px 12px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 3px;">Visual Extraction Tool</div>
+              <div style="font-size: 11px; color: var(--body); font-weight: 300; line-height: 1.5;">Automates text extraction from PDF and PPTX files into a structured Excel format ready for translation workflows. Reads content in visual reading order, supports optional validation against existing files, and packages all outputs including a ZIP bundle, removing a major manual bottleneck in content preparation for localization.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job-divider"></div>
+
+      <!-- Event Linkx -->
+      <div class="job">
+        <div class="job-head">
+          <div class="job-title">Operations Lead - Business, Project &amp; Creative</div>
+        </div>
+        <div class="job-sub">
+          <span class="job-co">Event Linkx Private Limited</span>
+          <span class="job-dot">◆</span>
+          <span class="job-loc">Bengaluru, India</span>
+          <span class="job-dot">◆</span>
+          <span class="job-date">Apr 2019 – Feb 2026</span>
+        </div>
+        <ul class="bullets">
+          <li>Led <strong>full-cycle business operations and project delivery across 450+ projects and approximately 150 events per year</strong> spanning event management, exhibition setups, corporate activations, and creative productions. Managed every stage from client briefing, concept development, and cost estimation through vendor coordination, on-ground execution, and post-event billing, consistently across Pan India markets.</li>
+          <li>Built and managed a <strong>vendor ecosystem of 20-25 active vendors</strong> covering fabrication, AV, logistics, printing, staffing, and venue operations. Negotiated rates, managed contracts, and maintained relationships to ensure reliable delivery across high-volume event seasons with teams scaling up to 15-16+ personnel per event on the ground.</li>
+          <li>Handled <strong>end-to-end client communication and relationship management</strong> across a portfolio of corporate and institutional clients, from initial briefing and proposal presentation to budget approvals, progress updates, and post-event reporting. Managed billing, cost reconciliation, and revenue tracking across all active projects.</li>
+          <li>Designed and implemented <strong>operational SOPs, process frameworks, and AI-integrated workflows</strong> to standardize execution, reduce errors, and improve consistency across the organisation's project delivery and administrative functions as the business scaled.</li>
+          <li>Produced all <strong>client-facing business documentation</strong>: proposals, event quotations, presentations, project trackers, and operational reports - that supported both client decision-making and internal leadership planning across the year.</li>
+        </ul>
+
+        <div style="margin-top: 16px; background: linear-gradient(135deg, rgba(244,197,83,0.08), rgba(45,212,191,0.06)); border: 1px solid rgba(244,197,83,0.2); border-radius: 10px; padding: 14px 16px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+            <div>
+              <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13.5px; color: var(--gold); margin-bottom: 2px;">Event Linkx Entertainment</div>
+              <div style="font-size: 11px; color: var(--muted); font-weight: 300;">Film Production Division &nbsp;·&nbsp; Founded &amp; Headed by Muni Venkatacharan G</div>
+            </div>
+            <div style="background: rgba(244,197,83,0.15); border: 1px solid rgba(244,197,83,0.35); border-radius: 6px; padding: 4px 10px; text-align: center; flex-shrink: 0;">
+              <div style="font-size: 8.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold);">Registered Producer</div>
+              <div style="font-size: 9px; color: var(--muted); font-weight: 300; margin-top: 1px;">Karnataka Film Chamber of Commerce</div>
+            </div>
+          </div>
+          <p style="font-size: 12px; color: var(--body); font-weight: 300; line-height: 1.65; margin-bottom: 12px;">
+            Conceptualized, built, and headed <strong style="color: var(--white);">Event Linkx Entertainment</strong> - the film and media production arm of Event Linkx, built from the ground up. Handled every aspect of setting up the division: company structure, industry registration, production planning, and creative development. As a <strong style="color: var(--gold);">registered producer with the Karnataka Film Chamber of Commerce</strong>, took the banner's first and flagship production all the way from concept to release-ready output.
+          </p>
+
+          <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+            🎬 Filmography <span style="font-size: 9px; color: var(--muted); letter-spacing: 1px; font-weight: 400;">Listed on IMDb</span>
+          </div>
+
+          <div class="film-card" style="margin-bottom: 8px;">
+            <div class="job-head" style="margin-bottom: 4px;">
+              <div class="film-title">Detective Teekshana <span style="font-size: 10px; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 300;">(2024)</span></div>
+              <span class="job-badge badge-film">Main Role</span>
+            </div>
+            <div class="film-sub">Kannada Feature Film &nbsp;·&nbsp; ft. Priyanka Upendra &nbsp;·&nbsp; Event Linkx Entertainment Production</div>
+            <div class="film-roles">
+              <span class="film-role">Actor</span>
+              <span class="film-role">Producer</span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <div class="film-card" style="padding: 10px 13px;">
+              <div class="film-title" style="font-size: 12px; margin-bottom: 2px;">Ugravatara <span style="font-size: 9.5px; color: var(--muted); font-weight: 300;">(2024)</span></div>
+              <div class="film-sub" style="font-size: 10px; margin-bottom: 5px;">Action · Crime · Dir. Gurumurthy</div>
+              <div class="film-roles">
+                <span class="film-role">Actor</span>
+              </div>
+              <div style="margin-top: 5px; font-size: 9.5px; color: var(--teal);">★ 8.6 IMDb &nbsp;·&nbsp; 2.1K ratings</div>
+            </div>
+            <div class="film-card" style="padding: 10px 13px;">
+              <div class="film-title" style="font-size: 12px; margin-bottom: 2px;">The Virus <span style="font-size: 9.5px; color: var(--muted); font-weight: 300;">(Kannada)</span></div>
+              <div class="film-sub" style="font-size: 10px; margin-bottom: 5px;">Horror · Dir. Ramesh Yadav</div>
+              <div class="film-roles">
+                <span class="film-role">Actor</span>
+              </div>
+              <div style="margin-top: 5px; font-size: 9.5px; color: var(--muted);">ft. Priyanka Upendra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION in main column -->
+      <div style="margin-top: 24px;">
+        <div class="sh">Education</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 4px;">
+          <div style="background: rgba(45,21,84,0.5); border: 1px solid rgba(139,92,246,0.2); border-radius: 10px; padding: 14px 16px;">
+            <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--white); margin-bottom: 4px;">BBA</div>
+            <div style="font-size: 11px; color: var(--muted); font-weight: 300; margin-bottom: 6px; line-height: 1.4;">St. Joseph's College of Commerce, Bengaluru</div>
+            <div style="font-size: 10px; color: var(--gold);">GPA 7.51 &nbsp;·&nbsp; 2017–2020</div>
+          </div>
+          <div style="background: rgba(45,21,84,0.5); border: 1px solid rgba(139,92,246,0.2); border-radius: 10px; padding: 14px 16px;">
+            <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--white); margin-bottom: 4px;">Pre-University</div>
+            <div style="font-size: 11px; color: var(--muted); font-weight: 300; margin-bottom: 6px; line-height: 1.4;">St. Joseph's PU College, Bengaluru &nbsp;·&nbsp; Commerce &amp; CS</div>
+            <div style="font-size: 10px; color: var(--gold);">84% &nbsp;·&nbsp; 2015–2017</div>
+          </div>
+          <div style="background: rgba(45,21,84,0.5); border: 1px solid rgba(139,92,246,0.2); border-radius: 10px; padding: 14px 16px;">
+            <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--white); margin-bottom: 4px;">ICSE</div>
+            <div style="font-size: 11px; color: var(--muted); font-weight: 300; margin-bottom: 6px; line-height: 1.4;">Florence Public School, Bengaluru</div>
+            <div style="font-size: 10px; color: var(--gold);">87% &nbsp;·&nbsp; 2015</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDE -->
+    <div class="side">
+
+      <!-- SKILLS -->
+      <div class="side-block">
+        <div class="sh">Core Skills</div>
+        <div class="skills-wrap">
+          <span class="sk sk-a">Operations Management</span>
+          <span class="sk sk-a">Business Operations</span>
+          <span class="sk sk-a">Project Management</span>
+          <span class="sk sk-a">Content Operations</span>
+          <span class="sk sk-b">Localization Workflows</span>
+          <span class="sk sk-b">Translation Coordination</span>
+          <span class="sk sk-b">Multilingual Project Coordination</span>
+          <span class="sk sk-b">Brief Preparation & Briefing</span>
+          <span class="sk sk-a">EMEA Market Operations</span>
+          <span class="sk sk-a">Pan India Market Operations</span>
+          <span class="sk sk-c">Workflow Automation</span>
+          <span class="sk sk-c">Workflow Orchestration</span>
+          <span class="sk sk-c">AI-Assisted Development</span>
+          <span class="sk sk-c">Vibe Coding</span>
+          <span class="sk sk-a">Digital Asset Management</span>
+          <span class="sk sk-a">Stakeholder Management</span>
+          <span class="sk sk-d">Vendor Management & Negotiation</span>
+          <span class="sk sk-d">Client Relationship Management</span>
+          <span class="sk sk-d">Budget & Cost Management</span>
+          <span class="sk sk-d">Cost Estimation & Pricing</span>
+          <span class="sk sk-a">Team Coordination & Leadership</span>
+          <span class="sk sk-a">Resource Planning</span>
+          <span class="sk sk-c">SOP Development</span>
+          <span class="sk sk-a">Operational Reporting</span>
+          <span class="sk sk-a">Cross-Functional Reporting</span>
+          <span class="sk sk-b">AI-Enabled Operations</span>
+          <span class="sk sk-a">Process Optimisation</span>
+          <span class="sk sk-a">Documentation & Knowledge Management</span>
+          <span class="sk sk-d">Event Production & Management</span>
+          <span class="sk sk-d">Production Planning</span>
+          <span class="sk sk-d">Film Production</span>
+          <span class="sk sk-b">Cross-Cultural Communication</span>
+          <span class="sk sk-a">Risk & Contingency Management</span>
+        </div>
+      </div>
+
+      <!-- DOMAINS -->
+      <div class="side-block">
+        <div class="sh">Domains</div>
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+          <div style="font-size: 11px; color: var(--body); font-weight: 400; padding: 5px 10px; background: rgba(139,92,246,0.1); border-left: 2px solid var(--p5); border-radius: 0 4px 4px 0;">Content & Localization Operations</div>
+          <div style="font-size: 11px; color: var(--body); font-weight: 400; padding: 5px 10px; background: rgba(45,212,191,0.08); border-left: 2px solid var(--teal); border-radius: 0 4px 4px 0;">Events & Exhibition Management</div>
+          <div style="font-size: 11px; color: var(--body); font-weight: 400; padding: 5px 10px; background: rgba(244,197,83,0.08); border-left: 2px solid var(--gold); border-radius: 0 4px 4px 0;">Film & Media Production</div>
+          <div style="font-size: 11px; color: var(--body); font-weight: 400; padding: 5px 10px; background: rgba(255,107,107,0.08); border-left: 2px solid var(--coral); border-radius: 0 4px 4px 0;">B2B Marketing & Digital Content</div>
+          <div style="font-size: 11px; color: var(--body); font-weight: 400; padding: 5px 10px; background: rgba(139,92,246,0.1); border-left: 2px solid var(--p5); border-radius: 0 4px 4px 0;">Workflow Automation & Tooling</div>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="side-block">
+        <div class="sh">Tools &amp; Tech</div>
+        <div class="tool-row"><div class="tl">Workflow</div><div class="tv">ClickUp, Jira</div></div>
+        <div class="tool-row"><div class="tl">Assets / DAM</div><div class="tv">AEM, Google Drive</div></div>
+        <div class="tool-row"><div class="tl">Automation</div><div class="tv">Python, Apps Script, n8n</div></div>
+        <div class="tool-row"><div class="tl">AI Tools</div><div class="tv">Claude, ChatGPT, Gemini</div></div>
+        <div class="tool-row"><div class="tl">Productivity</div><div class="tv">Google Workspace, MS Office</div></div>
+        <div class="tool-row"><div class="tl">Creative</div><div class="tv">Canva, Premiere Pro, Photoshop</div></div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="side-block">
+        <div class="sh">Certifications</div>
+        <div class="cert"><div class="cn">Google Project Management Professional Certificate</div><div class="ci">Google</div></div>
+        <div class="cert"><div class="cn">AI Foundations for Everyone</div><div class="ci">IBM</div></div>
+        <div class="cert"><div class="cn">Introduction to Jira</div><div class="ci">Atlassian</div></div>
+        <div class="cert"><div class="cn">Agile with Atlassian Jira</div><div class="ci">Atlassian</div></div>
+        <div class="cert"><div class="cn">Introduction to Business Analytics</div><div class="ci">Tableau Learning Partner</div></div>
+        <div class="cert"><div class="cn">ClickUp Novice Certificate</div><div class="ci">ClickUp University</div></div>
+        <div class="cert" style="border-left-color: var(--gold);"><div class="cn" style="color: var(--gold);">Project Management Professional (PMP)</div><div class="ci">Project Management Institute - In Progress</div></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="side-block">
+        <div class="sh">Languages</div>
+        <div class="lang">
+          <div><div class="ln">English</div><div class="ld"><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div></div></div>
+          <div class="ll">Professional</div>
+        </div>
+        <div class="lang">
+          <div><div class="ln">Telugu</div><div class="ld"><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div></div></div>
+          <div class="ll">Native</div>
+        </div>
+        <div class="lang">
+          <div><div class="ln">Kannada</div><div class="ld"><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-off"></div></div></div>
+          <div class="ll">Advanced</div>
+        </div>
+        <div class="lang">
+          <div><div class="ln">Hindi</div><div class="ld"><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-off"></div></div></div>
+          <div class="ll">Advanced</div>
+        </div>
+        <div class="lang">
+          <div><div class="ln">Tamil</div><div class="ld"><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-off"></div><div class="dot dot-off"></div><div class="dot dot-off"></div></div></div>
+          <div class="ll">Basic</div>
+        </div>
+        <div class="lang">
+          <div><div class="ln">French</div><div class="ld"><div class="dot dot-on"></div><div class="dot dot-on"></div><div class="dot dot-off"></div><div class="dot dot-off"></div><div class="dot dot-off"></div></div></div>
+          <div class="ll">Basic</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
