@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
 :root {
   --p1: #0d0118;
   --p2: #1a0533;
@@ -23,7 +23,7 @@
   --muted: #a89bc0;
   --body: #ddd6f3;
 }
-
+ 
 body {
   background: #0a0015;
   font-family: 'Outfit', sans-serif;
@@ -31,7 +31,7 @@ body {
   font-size: 13px;
   line-height: 1.6;
 }
-
+ 
 .page {
   width: 100%;
   max-width: 100%;
@@ -40,7 +40,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-
+ 
 /* ── DECORATIVE ── */
 .deco-circle {
   position: absolute;
@@ -50,7 +50,7 @@ body {
 .dc1 { width: 500px; height: 500px; top: -200px; right: -150px; background: radial-gradient(circle, rgba(91,33,182,0.3) 0%, transparent 65%); }
 .dc2 { width: 350px; height: 350px; bottom: 200px; left: -100px; background: radial-gradient(circle, rgba(45,212,191,0.1) 0%, transparent 65%); }
 .dc3 { width: 200px; height: 200px; top: 60%; right: 20px; background: radial-gradient(circle, rgba(244,197,83,0.08) 0%, transparent 65%); }
-
+ 
 .noise {
   position: absolute;
   inset: 0;
@@ -58,22 +58,22 @@ body {
   opacity: 0.4;
   pointer-events: none;
 }
-
+ 
 /* ── HERO HEADER ── */
 .hero {
   padding: 44px 48px 0;
   position: relative;
 }
-
+ 
 .hero-inner {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
 }
-
+ 
 .hero-left { flex: 1; }
-
+ 
 .eyebrow {
   font-size: 10px;
   font-weight: 600;
@@ -85,7 +85,7 @@ body {
   align-items: center;
   gap: 8px;
 }
-
+ 
 .eyebrow::before {
   content: '';
   width: 24px;
@@ -93,7 +93,7 @@ body {
   background: var(--teal);
   display: inline-block;
 }
-
+ 
 .name {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
@@ -104,17 +104,17 @@ body {
   margin-bottom: 10px;
   white-space: nowrap;
 }
-
+ 
 .name .highlight { color: var(--p5); }
 .name .g { color: var(--gold); }
-
+ 
 .role-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 14px;
 }
-
+ 
 .role-pill {
   font-size: 10.5px;
   font-weight: 600;
@@ -123,12 +123,12 @@ body {
   border-radius: 20px;
   text-transform: uppercase;
 }
-
+ 
 .pill-purple { background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.5); color: var(--p6); }
 .pill-gold { background: rgba(244,197,83,0.15); border: 1px solid rgba(244,197,83,0.4); color: var(--gold); }
 .pill-teal { background: rgba(45,212,191,0.12); border: 1px solid rgba(45,212,191,0.35); color: var(--teal); }
 .pill-coral { background: rgba(255,107,107,0.12); border: 1px solid rgba(255,107,107,0.35); color: var(--coral); }
-
+ 
 .tagline {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -139,13 +139,13 @@ body {
   border-left: 2px solid var(--p5);
   padding-left: 12px;
 }
-
+ 
 .hero-right {
   text-align: right;
   flex-shrink: 0;
   padding-top: 8px;
 }
-
+ 
 .contact-row {
   display: flex;
   align-items: center;
@@ -155,7 +155,7 @@ body {
   font-size: 11.5px;
   color: var(--muted);
 }
-
+ 
 .contact-icon {
   width: 20px;
   height: 20px;
@@ -168,14 +168,14 @@ body {
   font-size: 9px;
   flex-shrink: 0;
 }
-
+ 
 /* ── DIVIDER ── */
 .hero-divider {
   margin: 20px 48px 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(139,92,246,0.5) 20%, rgba(244,197,83,0.3) 60%, transparent);
 }
-
+ 
 /* ── STAT STRIP ── */
 .stat-strip {
   display: flex;
@@ -183,13 +183,13 @@ body {
   gap: 0;
   border-bottom: 1px solid rgba(139,92,246,0.15);
 }
-
+ 
 .stat {
   flex: 1;
   text-align: center;
   position: relative;
 }
-
+ 
 .stat::after {
   content: '';
   position: absolute;
@@ -197,9 +197,9 @@ body {
   width: 1px;
   background: rgba(139,92,246,0.2);
 }
-
+ 
 .stat:last-child::after { display: none; }
-
+ 
 .stat-num {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
@@ -208,9 +208,9 @@ body {
   line-height: 1;
   margin-bottom: 3px;
 }
-
+ 
 .stat-num span { color: var(--gold); }
-
+ 
 .stat-label {
   font-size: 9.5px;
   font-weight: 500;
@@ -218,16 +218,16 @@ body {
   text-transform: uppercase;
   color: var(--muted);
 }
-
+ 
 /* ── BODY ── */
 .body {
   display: grid;
-  grid-template-columns: 1fr 230px;
+  grid-template-columns: 1fr 280px;
 }
-
+ 
 .main { padding: 24px 28px 28px 48px; border-right: 1px solid rgba(139,92,246,0.12); }
 .side { padding: 24px 28px; background: rgba(30,5,60,0.4); }
-
+ 
 /* ── SECTION HEADING ── */
 .sh {
   font-family: 'Syne', sans-serif;
@@ -241,14 +241,14 @@ body {
   align-items: center;
   gap: 10px;
 }
-
+ 
 .sh::after {
   content: '';
   flex: 1;
   height: 1px;
   background: linear-gradient(90deg, rgba(139,92,246,0.5), transparent);
 }
-
+ 
 /* ── ABOUT ── */
 .about-text {
   font-size: 12.5px;
@@ -257,14 +257,14 @@ body {
   font-weight: 300;
   margin-bottom: 20px;
 }
-
+ 
 .about-text strong { color: var(--white); font-weight: 500; }
 .about-text .accent { color: var(--gold); font-weight: 500; }
 .about-text .teal { color: var(--teal); font-weight: 500; }
-
+ 
 /* ── EXPERIENCE ── */
 .job { margin-bottom: 18px; }
-
+ 
 .job-head {
   display: flex;
   justify-content: space-between;
@@ -272,7 +272,7 @@ body {
   margin-bottom: 4px;
   gap: 10px;
 }
-
+ 
 .job-title {
   font-family: 'Syne', sans-serif;
   font-weight: 700;
@@ -280,7 +280,7 @@ body {
   color: var(--white);
   line-height: 1.2;
 }
-
+ 
 .job-badge {
   font-size: 8.5px;
   font-weight: 700;
@@ -291,10 +291,10 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-
+ 
 .badge-current { background: rgba(45,212,191,0.2); border: 1px solid rgba(45,212,191,0.4); color: var(--teal); }
 .badge-film { background: rgba(244,197,83,0.2); border: 1px solid rgba(244,197,83,0.4); color: var(--gold); }
-
+ 
 .job-sub {
   display: flex;
   align-items: center;
@@ -302,14 +302,14 @@ body {
   flex-wrap: wrap;
   margin-bottom: 8px;
 }
-
+ 
 .job-co { font-size: 11.5px; font-weight: 600; color: var(--gold); }
 .job-dot { color: rgba(139,92,246,0.4); font-size: 8px; }
 .job-loc { font-size: 11px; color: var(--muted); }
 .job-date { font-size: 11px; color: var(--muted); font-style: italic; }
-
+ 
 .bullets { list-style: none; }
-
+ 
 .bullets li {
   font-size: 12px;
   line-height: 1.6;
@@ -319,7 +319,7 @@ body {
   padding-left: 14px;
   position: relative;
 }
-
+ 
 .bullets li::before {
   content: '▸';
   position: absolute;
@@ -328,17 +328,17 @@ body {
   font-size: 9px;
   top: 3px;
 }
-
+ 
 .bullets li strong { color: var(--white); font-weight: 500; }
 .bullets li .teal { color: var(--teal); font-weight: 500; }
 .bullets li .gold { color: var(--gold); }
-
+ 
 .job-divider {
   height: 1px;
   background: linear-gradient(90deg, rgba(139,92,246,0.2), transparent);
   margin: 16px 0;
 }
-
+ 
 /* ── FILM CARD ── */
 .film-card {
   background: linear-gradient(135deg, rgba(46,15,82,0.8), rgba(13,1,24,0.9));
@@ -349,7 +349,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-
+ 
 .film-card::before {
   content: '🎬';
   position: absolute;
@@ -358,7 +358,7 @@ body {
   font-size: 18px;
   opacity: 0.25;
 }
-
+ 
 .film-title {
   font-family: 'Syne', sans-serif;
   font-weight: 700;
@@ -366,19 +366,19 @@ body {
   color: var(--gold);
   margin-bottom: 3px;
 }
-
+ 
 .film-sub {
   font-size: 11px;
   color: var(--muted);
   margin-bottom: 6px;
 }
-
+ 
 .film-roles {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
 }
-
+ 
 .film-role {
   font-size: 9.5px;
   font-weight: 600;
@@ -389,13 +389,18 @@ body {
   border: 1px solid rgba(244,197,83,0.3);
   color: var(--gold2);
 }
-
+ 
 /* ── SIDE ── */
 .side-block { margin-bottom: 20px; }
-
+ 
 /* Skills */
-.skills-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
-
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  overflow: hidden;
+}
+ 
 .sk {
   font-size: 9.5px;
   font-weight: 500;
@@ -404,28 +409,28 @@ body {
   line-height: 1.4;
   white-space: nowrap;
 }
-
+ 
 .sk-a { background: rgba(139,92,246,0.18); border: 1px solid rgba(139,92,246,0.35); color: var(--p6); }
 .sk-b { background: rgba(45,212,191,0.12); border: 1px solid rgba(45,212,191,0.3); color: var(--teal); }
 .sk-c { background: rgba(244,197,83,0.12); border: 1px solid rgba(244,197,83,0.3); color: var(--gold); }
 .sk-d { background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.25); color: var(--coral); }
-
+ 
 /* Tools */
 .tool-row { margin-bottom: 9px; }
 .tl { font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
 .tv { font-size: 11.5px; color: var(--body); font-weight: 300; line-height: 1.5; }
-
+ 
 /* Certs */
 .cert { margin-bottom: 8px; padding-left: 10px; border-left: 2px solid var(--p4); }
 .cn { font-size: 11.5px; color: var(--white); font-weight: 500; line-height: 1.3; }
 .ci { font-size: 10.5px; color: var(--muted); font-weight: 300; }
-
+ 
 /* Edu */
 .edu { margin-bottom: 10px; }
 .ed { font-size: 12px; font-weight: 500; color: var(--white); line-height: 1.3; }
 .es { font-size: 10.5px; color: var(--muted); font-weight: 300; }
 .eg { font-size: 10px; color: var(--gold); margin-top: 2px; }
-
+ 
 /* Lang */
 .lang { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .ln { font-size: 12px; color: var(--white); font-weight: 400; }
@@ -434,7 +439,7 @@ body {
 .dot-on { background: var(--p5); }
 .dot-off { background: rgba(139,92,246,0.2); }
 .ll { font-size: 9.5px; color: var(--muted); letter-spacing: 0.5px; }
-
+ 
 /* Automation highlight box */
 .auto-box {
   background: linear-gradient(135deg, rgba(45,212,191,0.07), rgba(139,92,246,0.1));
@@ -443,7 +448,7 @@ body {
   padding: 10px 13px;
   margin-top: 10px;
 }
-
+ 
 .auto-box-title {
   font-size: 9.5px;
   font-weight: 700;
@@ -452,13 +457,13 @@ body {
   color: var(--teal);
   margin-bottom: 6px;
 }
-
+ 
 .auto-tools {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
-
+ 
 .at {
   font-size: 9.5px;
   padding: 2px 7px;
@@ -468,7 +473,7 @@ body {
   color: var(--teal);
   font-weight: 500;
 }
-
+ 
 @media print {
   body { background: var(--p1); }
   .page { margin: 0; width: 100%; }
@@ -482,7 +487,7 @@ body {
   <div class="deco-circle dc2"></div>
   <div class="deco-circle dc3"></div>
   <div class="noise"></div>
-
+ 
   <!-- ── TOP LINK BAR ──────────────────────────────────── -->
   <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 14px 48px 0; position: relative; z-index: 10;">
     <a href="https://www.linkedin.com/in/munivc" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 7px; background: rgba(10,102,194,0.3); border: 1.5px solid #3a7bd5; border-radius: 8px; padding: 8px 16px;">
@@ -494,7 +499,7 @@ body {
       <span style="font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 0.5px; font-family: 'Syne', sans-serif;">IMDb</span>
     </a>
   </div>
-
+ 
   <!-- ── HERO ─────────────────────────────────────────── -->
   <div class="hero">
     <div class="hero-inner">
@@ -526,9 +531,9 @@ body {
       </div>
     </div>
   </div>
-
+ 
   <div class="hero-divider"></div>
-
+ 
   <!-- ── STAT STRIP ────────────────────────────────────── -->
   <div class="stat-strip">
     <div class="stat">
@@ -552,13 +557,13 @@ body {
       <div class="stat-label">Films</div>
     </div>
   </div>
-
+ 
   <!-- ── BODY ──────────────────────────────────────────── -->
   <div class="body">
-
+ 
     <!-- MAIN -->
     <div class="main">
-
+ 
       <!-- ABOUT -->
       <div style="margin-bottom: 22px;">
         <div class="sh">Who I Am</div>
@@ -575,10 +580,10 @@ body {
           Before all of this, I spent nearly 7 years running a <strong>B2B events company operating Pan India</strong>, managing 150+ events a year, a 25-vendor network, and teams of 15+ on the ground. And somewhere in between, I <span class="accent">produced and acted in a Kannada feature film</span> and went on to act in two more. All three are on IMDb, all featuring <strong>Priyanka Upendra</strong>. I'm someone who commits completely to everything they do.
         </p>
       </div>
-
+ 
       <!-- EXPERIENCE -->
       <div class="sh">Experience</div>
-
+ 
       <!-- Webidoo -->
       <div class="job">
         <div class="job-head">
@@ -602,7 +607,7 @@ body {
           <li>Prepare and maintain <strong>structured daily operational reports, project status updates, and consolidated bi-weekly and monthly reports</strong> shared with leadership to maintain full delivery visibility. Introduced structured daily reporting practices from day one, which became a standard practice adopted by the team.</li>
           <li>Proactively <strong>identify workflow gaps, inefficiencies, and improvement opportunities</strong> by reviewing dashboards, delivery data, and team feedback. We take action to fix them rather than just flagging them. This approach led directly to building the automation suite below.</li>
         </ul>
-
+ 
         <div class="auto-box">
           <div class="auto-box-title">⚡ Self-Initiated: Automation Suite: 8 Tools Built &amp; Deployed</div>
           <p style="font-size: 11.5px; color: var(--body); font-weight: 300; margin-bottom: 12px; line-height: 1.6;">
@@ -644,9 +649,9 @@ body {
           </div>
         </div>
       </div>
-
+ 
       <div class="job-divider"></div>
-
+ 
       <!-- Event Linkx -->
       <div class="job">
         <div class="job-head">
@@ -666,7 +671,7 @@ body {
           <li>Designed and implemented <strong>operational SOPs, process frameworks, and AI-integrated workflows</strong> to standardize execution, reduce errors, and improve consistency across the organisation's project delivery and administrative functions as the business scaled.</li>
           <li>Produced all <strong>client-facing business documentation</strong>: proposals, event quotations, presentations, project trackers, and operational reports - that supported both client decision-making and internal leadership planning across the year.</li>
         </ul>
-
+ 
         <div style="margin-top: 16px; background: linear-gradient(135deg, rgba(244,197,83,0.08), rgba(45,212,191,0.06)); border: 1px solid rgba(244,197,83,0.2); border-radius: 10px; padding: 14px 16px;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
             <div>
@@ -681,11 +686,11 @@ body {
           <p style="font-size: 12px; color: var(--body); font-weight: 300; line-height: 1.65; margin-bottom: 12px;">
             Conceptualized, built, and headed <strong style="color: var(--white);">Event Linkx Entertainment</strong> - the film and media production arm of Event Linkx, built from the ground up. Handled every aspect of setting up the division: company structure, industry registration, production planning, and creative development. As a <strong style="color: var(--gold);">registered producer with the Karnataka Film Chamber of Commerce</strong>, took the banner's first and flagship production all the way from concept to release-ready output.
           </p>
-
+ 
           <div style="font-size: 9.5px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
             🎬 Filmography <span style="font-size: 9px; color: var(--muted); letter-spacing: 1px; font-weight: 400;">Listed on IMDb</span>
           </div>
-
+ 
           <div class="film-card" style="margin-bottom: 8px;">
             <div class="job-head" style="margin-bottom: 4px;">
               <div class="film-title">Detective Teekshana <span style="font-size: 10px; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 300;">(2024)</span></div>
@@ -697,7 +702,7 @@ body {
               <span class="film-role">Producer</span>
             </div>
           </div>
-
+ 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
             <div class="film-card" style="padding: 10px 13px;">
               <div class="film-title" style="font-size: 12px; margin-bottom: 2px;">Ugravatara <span style="font-size: 9.5px; color: var(--muted); font-weight: 300;">(2024)</span></div>
@@ -718,7 +723,7 @@ body {
           </div>
         </div>
       </div>
-
+ 
       <!-- EDUCATION in main column -->
       <div style="margin-top: 24px;">
         <div class="sh">Education</div>
@@ -740,12 +745,12 @@ body {
           </div>
         </div>
       </div>
-
+ 
     </div>
-
+ 
     <!-- SIDE -->
     <div class="side">
-
+ 
       <!-- SKILLS -->
       <div class="side-block">
         <div class="sh">Core Skills</div>
@@ -762,7 +767,7 @@ body {
           <span class="sk sk-a">Pan India Market Operations</span>
           <span class="sk sk-c">Workflow Automation</span>
           <span class="sk sk-c">Workflow Orchestration</span>
-          <span class="sk sk-c">AI-Assisted Development</span>
+          <span class="sk sk-c">AI-Assisted Dev.</span>
           <span class="sk sk-c">Vibe Coding</span>
           <span class="sk sk-a">Digital Asset Management</span>
           <span class="sk sk-a">Stakeholder Management</span>
@@ -777,7 +782,7 @@ body {
           <span class="sk sk-a">Cross-Functional Reporting</span>
           <span class="sk sk-b">AI-Enabled Operations</span>
           <span class="sk sk-a">Process Optimisation</span>
-          <span class="sk sk-a">Documentation & Knowledge Management</span>
+          <span class="sk sk-a">Documentation & KM</span>
           <span class="sk sk-d">Event Production & Management</span>
           <span class="sk sk-d">Production Planning</span>
           <span class="sk sk-d">Film Production</span>
@@ -785,7 +790,7 @@ body {
           <span class="sk sk-a">Risk & Contingency Management</span>
         </div>
       </div>
-
+ 
       <!-- DOMAINS -->
       <div class="side-block">
         <div class="sh">Domains</div>
@@ -797,7 +802,7 @@ body {
           <div style="font-size: 11px; color: var(--body); font-weight: 400; padding: 5px 10px; background: rgba(139,92,246,0.1); border-left: 2px solid var(--p5); border-radius: 0 4px 4px 0;">Workflow Automation & Tooling</div>
         </div>
       </div>
-
+ 
       <!-- TOOLS -->
       <div class="side-block">
         <div class="sh">Tools &amp; Tech</div>
@@ -808,7 +813,7 @@ body {
         <div class="tool-row"><div class="tl">Productivity</div><div class="tv">Google Workspace, MS Office</div></div>
         <div class="tool-row"><div class="tl">Creative</div><div class="tv">Canva, Premiere Pro, Photoshop</div></div>
       </div>
-
+ 
       <!-- CERTIFICATIONS -->
       <div class="side-block">
         <div class="sh">Certifications</div>
@@ -820,7 +825,7 @@ body {
         <div class="cert"><div class="cn">ClickUp Novice Certificate</div><div class="ci">ClickUp University</div></div>
         <div class="cert" style="border-left-color: var(--gold);"><div class="cn" style="color: var(--gold);">Project Management Professional (PMP)</div><div class="ci">Project Management Institute - In Progress</div></div>
       </div>
-
+ 
       <!-- LANGUAGES -->
       <div class="side-block">
         <div class="sh">Languages</div>
@@ -849,9 +854,10 @@ body {
           <div class="ll">Basic</div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </div>
 </body>
 </html>
+ 
