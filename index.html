@@ -102,7 +102,6 @@ body {
   color: var(--white);
   letter-spacing: -1.5px;
   margin-bottom: 10px;
-  white-space: nowrap;
 }
  
 .name .highlight { color: var(--p5); }
@@ -398,7 +397,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  overflow: hidden;
 }
  
 .sk {
@@ -479,116 +477,160 @@ body {
   .page { margin: 0; width: 100%; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
- 
+
 @media (max-width: 768px) {
-  .hero { padding: 24px 20px 0; }
- 
+
+  body { overflow-x: hidden; }
+
+  .page { overflow-x: hidden; }
+
+  /* Top bar */
+  .top-bar {
+    padding: 14px 20px 0 !important;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Hero */
+  .hero { padding: 20px 20px 0; }
+
   .hero-inner {
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
   }
- 
+
+  .hero-left { width: 100%; }
+
   .name {
-    font-size: 32px;
+    font-size: 30px;
     white-space: normal;
+    word-break: break-word;
     letter-spacing: -0.5px;
   }
- 
-  .hero-right {
-    text-align: left;
-    width: 100%;
-  }
- 
-  .contact-row {
-    justify-content: flex-start;
-    flex-direction: row-reverse;
-  }
- 
-  .hero-divider { margin: 16px 20px 0; }
- 
-  .stat-strip {
-    padding: 12px 20px;
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
     flex-wrap: wrap;
-    gap: 12px;
   }
- 
-  .stat {
-    flex: 1 1 30%;
-    min-width: 80px;
-  }
- 
-  .stat::after { display: none; }
- 
-  .stat-num { font-size: 18px; }
- 
-  .body {
-    grid-template-columns: 1fr;
-  }
- 
-  .main {
-    padding: 20px 20px 20px 20px;
-    border-right: none;
-    border-bottom: 1px solid rgba(139,92,246,0.12);
-  }
- 
-  .side {
-    padding: 20px;
-  }
- 
+
   .tagline {
     font-size: 13px;
     max-width: 100%;
   }
- 
+
   .role-pills { gap: 5px; }
- 
-  .role-pill { font-size: 9.5px; padding: 3px 10px; }
- 
-  .about-text { font-size: 12px; }
- 
-  .bullets li { font-size: 11.5px; }
- 
-  .job-sub { flex-wrap: wrap; gap: 4px; }
- 
-  .auto-box { padding: 10px; }
- 
-  .skills-wrap { gap: 4px; }
- 
-  .sk { font-size: 9px; padding: 3px 7px; }
- 
-  .film-roles { flex-wrap: wrap; gap: 4px; }
- 
-  div[style*="grid-template-columns: 1fr 1fr"] {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
+  .role-pill { font-size: 9px; padding: 3px 9px; }
+
+  /* Contact - left aligned on mobile */
+  .hero-right {
+    text-align: left;
+    width: 100%;
+    padding-top: 0;
   }
- 
-  div[style*="grid-template-columns: 1fr 1fr 1fr"] {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-  }
- 
-  .stat-label { font-size: 8px; letter-spacing: 1px; }
- 
-  div[style*="justify-content: space-between"] {
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
- 
-  .top-bar {
-    padding: 12px 20px 0 !important;
-    flex-wrap: wrap;
+
+  .contact-row {
+    justify-content: flex-start;
+    flex-direction: row;
     gap: 8px;
   }
+
+  /* Divider */
+  .hero-divider { margin: 16px 20px 0; }
+
+  /* Stat strip - wraps into 2 or 3 per row */
+  .stat-strip {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 14px 0;
+  }
+
+  .stat {
+    flex: 1 1 33%;
+    min-width: 90px;
+  }
+
+  .stat::after { display: none; }
+  .stat-num { font-size: 20px; }
+  .stat-label { font-size: 8.5px; letter-spacing: 1px; }
+
+  /* Body - single column */
+  .body { grid-template-columns: 1fr; }
+
+  .main {
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(139,92,246,0.12);
+  }
+
+  .side { padding: 20px; }
+
+  /* About text */
+  .about-text { font-size: 13px; line-height: 1.7; }
+
+  /* Jobs */
+  .job-title { font-size: 14px; }
+  .bullets li { font-size: 12.5px; line-height: 1.65; }
+  .job-sub { flex-wrap: wrap; gap: 4px; }
+
+  /* Auto box */
+  .auto-box { padding: 12px; }
+  .auto-box-title { font-size: 10px; }
+
+  /* Skills - allow wrapping, no overflow hidden */
+  .skills-wrap {
+    overflow: visible;
+    gap: 5px;
+  }
+
+  .sk {
+    font-size: 10px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+
+  /* Grids inside main - force column */
+  .film-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .edu-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Certs */
+  .cn { font-size: 12px; }
+  .ci { font-size: 11px; }
+
+  /* Tools */
+  .tl { font-size: 10px; }
+  .tv { font-size: 12px; }
+
+  /* Lang */
+  .ln { font-size: 13px; }
+
+  /* Event Linkx Entertainment card header */
+  .ent-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
 }
- 
+
 @media (max-width: 480px) {
   .name { font-size: 26px; }
-  .stat-strip { gap: 8px; }
+
   .stat { flex: 1 1 45%; }
-  .eyebrow { font-size: 8px; letter-spacing: 2px; }
+
+  .top-bar a {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .role-pill { font-size: 8.5px; padding: 3px 8px; }
 }
 </style>
 </head>
@@ -632,11 +674,11 @@ body {
           <div class="contact-icon">📍</div>
         </div>
         <div class="contact-row">
-          <span>+91 9900097857</span>
+          <a href="tel:+919900097857" style="color: var(--muted); text-decoration: none;">+91 9900097857</a>
           <div class="contact-icon">📱</div>
         </div>
         <div class="contact-row">
-          <a href="mailto:mvcharan99&#64;gmail&#46;com" style="color: var(--muted); text-decoration: none;">mvcharan99&#64;gmail&#46;com</a>
+          <a href="mailto:mvcharan99@gmail.com" style="color: var(--muted); text-decoration: none;">mvcharan99&#64;gmail&#46;com</a>
           <div class="contact-icon">✉</div>
         </div>
       </div>
@@ -784,7 +826,7 @@ body {
         </ul>
  
         <div style="margin-top: 16px; background: linear-gradient(135deg, rgba(244,197,83,0.08), rgba(45,212,191,0.06)); border: 1px solid rgba(244,197,83,0.2); border-radius: 10px; padding: 14px 16px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;" class="ent-header">
             <div>
               <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13.5px; color: var(--gold); margin-bottom: 2px;">Event Linkx Entertainment</div>
               <div style="font-size: 11px; color: var(--muted); font-weight: 300;">Film Production Division &nbsp;·&nbsp; Founded &amp; Headed by Muni Venkatacharan G</div>
@@ -814,7 +856,7 @@ body {
             </div>
           </div>
  
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;" class="film-grid">
             <div class="film-card" style="padding: 10px 13px;">
               <div class="film-title" style="font-size: 12px; margin-bottom: 2px;">Ugravatara <span style="font-size: 9.5px; color: var(--muted); font-weight: 300;">(2024)</span></div>
               <div class="film-sub" style="font-size: 10px; margin-bottom: 5px;">Action · Crime · Dir. Gurumurthy</div>
@@ -838,7 +880,7 @@ body {
       <!-- EDUCATION in main column -->
       <div style="margin-top: 24px;">
         <div class="sh">Education</div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 4px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 4px;" class="edu-grid">
           <div style="background: rgba(45,21,84,0.5); border: 1px solid rgba(139,92,246,0.2); border-radius: 10px; padding: 14px 16px;">
             <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--white); margin-bottom: 4px;">BBA</div>
             <div style="font-size: 11px; color: var(--muted); font-weight: 300; margin-bottom: 6px; line-height: 1.4;">St. Joseph's College of Commerce, Bengaluru</div>
