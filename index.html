@@ -656,6 +656,59 @@ body {
 
   .role-pill { font-size: 8.5px; padding: 3px 8px; }
 }
+ /* ── LOADING SCREEN ── */
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0d0118;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 16px;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#loader.done { opacity: 0; visibility: hidden; }
+.loader-mono {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 52px;
+  color: #8b5cf6;
+  letter-spacing: -2px;
+  animation: loaderPulse 1.2s ease infinite alternate;
+}
+.loader-bar {
+  width: 120px; height: 2px;
+  background: rgba(139,92,246,0.2);
+  border-radius: 2px; overflow: hidden;
+}
+.loader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #2dd4bf);
+  border-radius: 2px;
+  animation: loaderFill 1.4s ease forwards;
+}
+@keyframes loaderPulse {
+  from { opacity: 0.5; transform: scale(0.97); }
+  to   { opacity: 1;   transform: scale(1); }
+}
+@keyframes loaderFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+/* ── EASTER EGG ── */
+#egg {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: linear-gradient(135deg, #1a0533, #2d1554);
+  border: 1px solid rgba(139,92,246,0.5);
+  border-radius: 14px; padding: 14px 22px;
+  font-family: 'Syne', sans-serif; font-size: 13px;
+  color: #c4b5fd; text-align: center;
+  z-index: 1000; pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s ease;
+  opacity: 0; white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(139,92,246,0.3);
+}
+#egg.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -1048,6 +1101,43 @@ body {
       </a>
     </div>
   </div>
+<div id="loader">
+  <div class="loader-mono">MV</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
 
+<div id="egg">🎬 Actor. Producer. Builder. All in.</div>
+
+<script>
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('done');
+  }, 1500);
+});
+
+let clicks = 0, eggTimer;
+const messages = [
+  '🎬 Actor. Producer. Builder. All in.',
+  '⚡ 8+ tools shipped. Without being asked.',
+  '🌍 Pan India to EMEA. Same energy.',
+  '🎯 Operations is my craft. Automation is my edge.',
+  '✨ Good work finds good people.'
+];
+let msgIndex = 0;
+
+document.querySelector('.name').addEventListener('click', () => {
+  clicks++;
+  clearTimeout(eggTimer);
+  if (clicks >= 5) {
+    const egg = document.getElementById('egg');
+    egg.textContent = messages[msgIndex % messages.length];
+    msgIndex++;
+    egg.classList.add('show');
+    setTimeout(() => egg.classList.remove('show'), 3000);
+    clicks = 0;
+  }
+  eggTimer = setTimeout(() => { clicks = 0; }, 2000);
+});
+</script>
 </body>
 </html>
